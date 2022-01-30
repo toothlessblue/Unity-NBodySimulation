@@ -21,7 +21,7 @@ namespace Unity_NBodySimulation
         /// <summary>
         /// Gravitational constant used to calculate attraction forces, also known as "Big G"
         /// </summary>
-        [SerializeField] private float _gravityConstant = 0.05f;
+        [SerializeField] private float _gravityConstant = 2.5f;
 
         private void Start() {
             if (UniverseSettings.instance) {

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Unity_NBodySimulation
 {
     /// <summary>
@@ -5,12 +7,21 @@ namespace Unity_NBodySimulation
     /// </summary>
     public class NBody : Body
     {
-        protected override void doGravity() {
+        protected override Vector3 _getGravitationalAcceleration() {
+            return this.getGravitationalAcceleration(this.getPosition());
+        }
+
+        public override Vector3 getGravitationalAcceleration(Vector3 position) {
+            Vector3 acceleration = Vector3.zero;
+            
             foreach (Body body in Body.bodies) {
                 if (this == body) continue;
+                if (!body.includeInOtherBodyCalculations) continue;
                 
-                this.addVelocity(this.calculateAttractionTo(body));
+                acceleration += this.calculateAttractionTo(body, position);
             }
+
+            return acceleration;
         }
     }
 }
