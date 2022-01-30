@@ -1,5 +1,7 @@
 # Unity N-Body Simulation
 
-Clone this repo into the assets folder with
+Developed using Unity 2020.3.26f1
 
-`git submodule add git@github.com:toothlessblue/Unity-NBodySimulation.git Assets/Unity-NBodySimulation`
+[Installing](./documentation/installing.md)<br>
+[Concepts](./documentation/concepts.md)<br>
+[Simulating planets](./documentation/simulating-planets.md)

@@ -8,20 +8,18 @@ namespace Unity_NBodySimulation
     {
         protected static readonly List<Body> bodies = new List<Body>();
         
-        /// <summary>
-        /// In kilograms
-        /// </summary>
-        public float mass;
+        public Vector3 initialVelocity;
 
+        private float mass => this.rigidbody.mass;
         private Rigidbody rigidbody;
 
-        // Start is called before the first frame update
         private void Start() {
             this.rigidbody = this.GetComponent<Rigidbody>();
+            this.rigidbody.velocity = initialVelocity;
+            Body.bodies.Add(this);
         }
 
-        // Update is called once per frame
-        private void Update() {
+        private void FixedUpdate() {
             this.doGravity();
         }
 
@@ -40,7 +38,7 @@ namespace Unity_NBodySimulation
             Vector3 direction = delta.normalized;
             float squareDistance = delta.sqrMagnitude;
             
-            Vector3 deltaV = (Universe.GRAVITY_CONSTANT * other.mass * direction) / squareDistance;
+            Vector3 deltaV = (UniverseSettings.gravityConstant * other.mass * direction) / squareDistance;
 
             return deltaV;
         }
