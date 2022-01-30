@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NBodySimulation
+namespace Unity_NBodySimulation
 {
     [RequireComponent(typeof(Rigidbody))]
     public abstract class Body : MonoBehaviour

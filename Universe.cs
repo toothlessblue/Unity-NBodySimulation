@@ -1,4 +1,4 @@
-namespace NBodySimulation
+namespace Unity_NBodySimulation
 {
     public static class Universe
     {

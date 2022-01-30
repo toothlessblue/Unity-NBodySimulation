@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NBodySimulation
+namespace Unity_NBodySimulation
 {
     public class OneBody : Body
     {
