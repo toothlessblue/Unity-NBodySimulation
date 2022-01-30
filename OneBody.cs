@@ -9,7 +9,7 @@ namespace Unity_NBodySimulation
         protected override void doGravity() {
             if (!this.otherBody) return;
 
-            this.calculateAttractionTo(this.otherBody);
+            this.addVelocity(this.calculateAttractionTo(this.otherBody));
         }
     }
 }

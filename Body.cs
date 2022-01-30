@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unity_NBodySimulation
@@ -5,6 +6,8 @@ namespace Unity_NBodySimulation
     [RequireComponent(typeof(Rigidbody))]
     public abstract class Body : MonoBehaviour
     {
+        protected static readonly List<Body> bodies = new List<Body>();
+        
         /// <summary>
         /// In kilograms
         /// </summary>
